@@ -200,14 +200,12 @@ export default function Navbar() {
           }}
         >
           {/* Logo mark */}
-          <div className="flex-shrink-0" style={{ filter: isOverDark ? "drop-shadow(0 2px 8px rgba(0,0,0,0.4))" : "none" }}>
+          <div className="flex-shrink-0 w-[50px] h-[50px] relative overflow-hidden rounded-xl">
             <Image
               src="/yubi-logo.png"
               alt="ЮБИ"
-              width={50}
-              height={50}
+              fill
               className="object-contain"
-              style={{ mixBlendMode: isOverDark ? "normal" : "multiply" }}
             />
           </div>
           {/* Name + subtitle */}
