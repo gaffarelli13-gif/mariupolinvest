@@ -200,7 +200,7 @@ export default function Navbar() {
           }}
         >
           {/* Logo mark */}
-          <div className="flex-shrink-0 w-[50px] h-[50px] relative overflow-hidden rounded-xl">
+          <div className="flex-shrink-0 w-[72px] h-[72px] relative overflow-hidden rounded-xl">
             <Image
               src="/yubi-logo.png"
               alt="ЮБИ"
