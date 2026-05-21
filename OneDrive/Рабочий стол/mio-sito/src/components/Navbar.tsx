@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 /* ── Icons ──────────────────────────────────────────────── */
 const IconHome = () => (
@@ -110,8 +111,8 @@ function DockItem({
   );
 }
 
-/* ── Tooltip animato Alina (a DESTRA, freccia punta a sinistra) ── */
-function AlinaTooltip() {
+/* ── Tooltip animato Mari (a DESTRA, freccia punta a sinistra) ── */
+function MariTooltip() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -146,7 +147,7 @@ function AlinaTooltip() {
               boxShadow: "0 4px 16px rgba(240,115,32,0.45)",
             }}
           >
-            Спросите Алину
+            Спросите Мари
           </div>
         </motion.div>
       )}
@@ -199,17 +200,15 @@ export default function Navbar() {
           }}
         >
           {/* Logo mark */}
-          <div className="flex-shrink-0" style={{ filter: isOverDark ? "drop-shadow(0 2px 6px rgba(0,0,0,0.5))" : "none" }}>
-            <svg width="46" height="46" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-              {/* House roof */}
-              <path d="M18 29 L32 14 L46 29" stroke="#54C5F8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-              {/* House body */}
-              <rect x="18" y="29" width="28" height="19" rx="2" stroke="#54C5F8" strokeWidth="4"/>
-              {/* Door */}
-              <rect x="27" y="36" width="10" height="12" rx="1.5" fill="#54C5F8" fillOpacity="0.55"/>
-              {/* Wave */}
-              <path d="M7 53 Q17 46 27 53 Q37 60 47 53 Q55 47 58 50" stroke="#29B6F6" strokeWidth="3.5" strokeLinecap="round"/>
-            </svg>
+          <div className="flex-shrink-0" style={{ filter: isOverDark ? "drop-shadow(0 2px 8px rgba(0,0,0,0.4))" : "none" }}>
+            <Image
+              src="/yubi-logo.png"
+              alt="ЮБИ"
+              width={50}
+              height={50}
+              className="object-contain"
+              style={{ mixBlendMode: isOverDark ? "normal" : "multiply" }}
+            />
           </div>
           {/* Name + subtitle */}
           <div className="hidden sm:flex flex-col leading-none">
@@ -289,7 +288,7 @@ export default function Navbar() {
               />
             )}
 
-            {/* Bottone foto Alina */}
+            {/* Bottone foto Mari */}
             <motion.button
               onClick={toggleChat}
               whileHover={{ scale: 1.08 }}
@@ -302,7 +301,7 @@ export default function Navbar() {
                   : "0 4px 18px rgba(240,115,32,0.5)",
                 border: chatOpen ? "2.5px solid #364B68" : "2.5px solid #F07320",
               }}
-              title="AI-помощник Алина"
+              title="AI-помощник Мари"
             >
               {chatOpen ? (
                 <div className="w-full h-full bg-[#273852] flex items-center justify-center">
@@ -314,7 +313,7 @@ export default function Navbar() {
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                   src="/alina-avatar.webp"
-                  alt="Алина"
+                  alt="Мари"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center 10%" }}
                 />
@@ -336,7 +335,7 @@ export default function Navbar() {
             )}
 
             {/* Tooltip a DESTRA — freccia punta a sinistra verso l'icona */}
-            {!chatOpen && <AlinaTooltip />}
+            {!chatOpen && <MariTooltip />}
 
           </div>
 
